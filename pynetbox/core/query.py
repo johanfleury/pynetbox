@@ -1,18 +1,17 @@
-"""
-(c) 2017 DigitalOcean
+# (c) 2017 DigitalOcean
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-"""
 try:
     import concurrent.futures as cf
 except ImportError:
@@ -186,7 +185,7 @@ class Request(object):
 
         :Raises: RequestError if req.ok returns false.
         :Returns: Version number as a string. Empty string if version is not
-        present in the headers.
+            present in the headers.
         """
         headers = {
             "Content-Type": "application/json;",
@@ -403,10 +402,10 @@ class Request(object):
 
         :param data: (list) Contains a dict that will be turned into a
             json object and sent to the API.
-        Returns:
+        :Returns:
             True if successful.
 
-        Raises:
+        :Raises:
             RequestError if req.ok doesn't return True.
         """
         return self._make_call(verb="delete", data=data)

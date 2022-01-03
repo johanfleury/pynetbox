@@ -77,6 +77,22 @@ Setting timeouts requires the use of Adapters.
     )
     nb.http_session = session
 
+
+Threading
+=========
+
+pynetbox supports multithreaded calls (in Python 3 only) for
+:py:meth:`.Endpoint.filter()` and :py:meth:`..all()` queries. It is **highly
+recommended** you have `MAX_PAGE_SIZE` in your Netbox install set to anything
+*except* `0` or `None`. The default value of `1000` is usually a good value to
+use. To enable threading, add `threading=True` parameter to the
+:py:class:`.Api`:
+
+.. code-block:: python
+
+   nb = pynetbox.api('http://localhost:8000', threading=True)
+
+
 .. _registering-models:
 
 Registering models
